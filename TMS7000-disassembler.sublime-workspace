@@ -1,0 +1,2564 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Pa",
+				"ParseInt	i int64, err error ƒ"
+			],
+			[
+				"func",
+				"func	func {...} ʂ"
+			],
+			[
+				"line",
+				"linereader	*bufio.Reader ν"
+			],
+			[
+				"fp",
+				"fpgaAccessTest	sophionlibs::OptionValueInt"
+			],
+			[
+				"cmd",
+				"cmdShell	CmdShell *"
+			],
+			[
+				"re",
+				"repetitions	int"
+			],
+			[
+				"for",
+				"for	For Loop"
+			],
+			[
+				"cyg_u",
+				"cyg_uint32	typedef"
+			],
+			[
+				"Option",
+				"OptionValueBool	class"
+			],
+			[
+				"FPSH",
+				"INITIAL_FPGA_CHANNEL_SHERMAN_RSCOMP_D	const cyg_uint16"
+			],
+			[
+				"cyg_uint",
+				"cyg_uint16	typedef"
+			],
+			[
+				"fil",
+				"filterValues	filterValueType [32]"
+			],
+			[
+				"NO",
+				"NO_OF_CHANNELS	const size_t"
+			],
+			[
+				"fi",
+				"filterValues	OptionValueList<OptionValueUnsigned<unsigned int>, 3>"
+			],
+			[
+				"Data",
+				"DataPackagerTest3	class"
+			],
+			[
+				"res",
+				"resultConnection	FakeResultConnection"
+			],
+			[
+				"BU",
+				"BUILD_NUMBER	const int"
+			],
+			[
+				"set",
+				"setRsCompensationFactor(unsigned int channel, cyg_uint16 factor)	void"
+			],
+			[
+				"e",
+				"elementNo	TBufferElementNo"
+			],
+			[
+				"exp",
+				"expectedNoOfElementsMax	TBufferElementNo"
+			],
+			[
+				"ex",
+				"expectedNoOfPages	size_t"
+			],
+			[
+				"no",
+				"noOfElementsPerChannel	size_t"
+			],
+			[
+				"me",
+				"measurementInputBuffer	PagedCircularBufferInterface<TMeasurementSample> *"
+			],
+			[
+				"Re",
+				"WillRepeatedly(const Action<qubeamp::PagedDataPointer<const unsigned short> (unsigned long long, unsigned long long)> &action)	testing::internal::TypedExpectation<qubeamp::PagedDataPointer<const unsigned short> (unsigned long long, unsigned long long)> &"
+			],
+			[
+				"req",
+				"requestTimestamp"
+			],
+			[
+				"time",
+				"timestampToElementNo(TAmpClockTicks timestamp)	TBufferElementNo"
+			],
+			[
+				"PAGE",
+				"PAGE_SIZE	const TBufferElementNo"
+			],
+			[
+				"off",
+				"offsetInChannel	TBufferElementNo"
+			],
+			[
+				"tim",
+				"timestampCorrected	TAmpClockTicks"
+			],
+			[
+				"of",
+				"offsetInChannel	TBufferElementNo"
+			],
+			[
+				"E",
+				"Exception  (class)"
+			],
+			[
+				"return",
+				"return_value_of_cmd"
+			],
+			[
+				"files",
+				"files_with_forbidden_string"
+			],
+			[
+				"str",
+				"str_equivalence"
+			],
+			[
+				"mi",
+				"microsecond"
+			],
+			[
+				"t",
+				"ticks_started_at_real_time  (variable)"
+			],
+			[
+				"tic",
+				"ticks_started_at_real_time"
+			],
+			[
+				"ti",
+				"ticks_started_at_real_time"
+			],
+			[
+				"A",
+				"APP_IP"
+			],
+			[
+				"MAX",
+				"MAX_LEGAL_BOARD_POSITION	const unsigned int"
+			],
+			[
+				"will",
+				"WillRepeatedly(const Action<unsigned short (unsigned int)> &action)	testing::internal::TypedExpectation<unsigned short (unsigned int)> &"
+			],
+			[
+				"cyg_ui",
+				"cyg_uint16	typedef"
+			],
+			[
+				"getI",
+				"getInitialVOffset(unsigned int channel)	cyg_uint16"
+			],
+			[
+				"TA",
+				"TAmpClockTicks"
+			],
+			[
+				"ele",
+				"elementNo2	TBufferElementNo"
+			],
+			[
+				"curr",
+				"currentResultSequence	Sequence *"
+			],
+			[
+				"result",
+				"resultSequence	Sequence"
+			],
+			[
+				"las",
+				"lastPage	int"
+			],
+			[
+				"fir",
+				"firstPage	int"
+			],
+			[
+				"get",
+				"getPageSize() const	TBufferElementNo"
+			],
+			[
+				"dm",
+				"dmaTransferSuccessful()	void"
+			],
+			[
+				"next",
+				"getNextChunkEndTime"
+			],
+			[
+				"MockIQ",
+				"MockIQAmpFPGA	class"
+			],
+			[
+				"IQA",
+				"IQAmpFPGA	class"
+			],
+			[
+				"m",
+				"measurementInputBuffer	MeasurementBuffer *"
+			],
+			[
+				"err",
+				"errorSeverity	qubeamp::ErrorSeverity"
+			],
+			[
+				"optio",
+				"optionValue	const char *"
+			],
+			[
+				"check",
+				"checksumBuffer	PagedCircularBuffer<cyg_uint32, NO_OF_CHANNELS, 4>"
+			],
+			[
+				"c",
+				"count	int"
+			],
+			[
+				"ch",
+				"checksumCount	int"
+			],
+			[
+				"p",
+				"push_back(const value_type &__x)	void"
+			],
+			[
+				"che",
+				"checksumLen	int"
+			],
+			[
+				"ID",
+				"IDataCollector	class"
+			],
+			[
+				"allo",
+				"allocateNextPageForWriting()	DataPointer<ElementT>"
+			],
+			[
+				"P",
+				"PAGE_A	qubeamp::IQAmpFPGA::FPGAPage"
+			],
+			[
+				"getpa",
+				"getCurrentFPGAPage()	qubeamp::IQAmpFPGA::FPGAPage"
+			],
+			[
+				"getC",
+				"getPageChecksum(unsigned int channel, qubeamp::IQAmpFPGA::FPGAPage page)	cyg_uint32"
+			],
+			[
+				"pN",
+				"pNextChecksumPageToWrite	cyg_uint32 *"
+			],
+			[
+				"FPGA_CH",
+				"FPGA_CHANNEL_CHECKSUM_PAGE_A	const cyg_addrword_t"
+			],
+			[
+				"u",
+				"u16_t	typedef"
+			],
+			[
+				"cyg_int",
+				"cyg_int32	typedef"
+			],
+			[
+				"Mock",
+				"MockIQAmpBoard	class"
+			],
+			[
+				"I",
+				"IQAmpBoard	class"
+			],
+			[
+				"reset",
+				"resetObjects	qubeamp::ResetObjects"
+			],
+			[
+				"CmdRe",
+				"CmdResetTest	class"
+			],
+			[
+				"Timer",
+				"TimerCounterTest	class"
+			],
+			[
+				"per",
+				"percentagePointsPerTick	const float"
+			],
+			[
+				"data",
+				"dataTimeStamp	TAmpClockTicks"
+			],
+			[
+				"Ch",
+				"ChannelWaveformHandlerTest	class"
+			],
+			[
+				"un",
+				"untilTime	TAmpClockTicks"
+			],
+			[
+				"s",
+				"setTimeslotStarted()	void"
+			],
+			[
+				"Tim",
+				"TimerCounter	class"
+			],
+			[
+				"en",
+				"ensureConnectionOpen()	bool"
+			],
+			[
+				"in",
+				"invalid	int"
+			],
+			[
+				"Da",
+				"DataPacketTest	class"
+			],
+			[
+				"CYG_ASS",
+				"CYG_ASSERT(condition, message)	macro"
+			],
+			[
+				"ne",
+				"nextIndex"
+			],
+			[
+				"qu",
+				"queuedBytes"
+			],
+			[
+				"n",
+				"noOfChunks	int"
+			],
+			[
+				"ma",
+				"maxlen	int"
+			],
+			[
+				"end",
+				"endHeaders	int"
+			],
+			[
+				"He",
+				"DataHeader	class"
+			],
+			[
+				"EXP",
+				"EXPECT_CALL(obj, call)	macro"
+			],
+			[
+				"Res",
+				"ResultConnectionTest	class"
+			],
+			[
+				"NO_",
+				"NO_TIMESTAMP	const TAmpClockTicks"
+			],
+			[
+				"log",
+				"logChunkScheduledForSending(TAmpClockTicks time, cyg_uint64 byteMilestone)	void"
+			],
+			[
+				"timestamp",
+				"timestamp_re"
+			],
+			[
+				"QAmp",
+				"QAmpFPGA	class"
+			],
+			[
+				"se",
+				"setHoldingVoltage(int holdingVoltage)	void"
+			],
+			[
+				"the",
+				"theQAmpFPGA	qubeamp::IQAmpFPGA *"
+			],
+			[
+				"IQ",
+				"IQAmpFPGA	class"
+			],
+			[
+				"hol",
+				"holdingSegmentIterator	FPGASegmentIterator"
+			],
+			[
+				"FP",
+				"FPGASegmentIterator	class"
+			],
+			[
+				"print",
+				"print_segment(const qubeamp::FPGASegment &segment)	void"
+			],
+			[
+				"prin",
+				"print_segment(const qubeamp::FPGASegment &segment)	void"
+			],
+			[
+				"wave",
+				"waveformIterator	qubeamp::FPGASegmentIterator"
+			],
+			[
+				"st",
+				"startValue	short"
+			],
+			[
+				"gro",
+				"groups	qubeamp::WaveGroup [20]"
+			],
+			[
+				"g",
+				"groups	qubeamp::WaveGroup [20]"
+			],
+			[
+				"seg",
+				"segmentParts	int"
+			],
+			[
+				"arm",
+				"arm-eabi-size"
+			],
+			[
+				"start",
+				"startVoltage"
+			],
+			[
+				"group",
+				"groupCount	short"
+			],
+			[
+				"by",
+				"bytesActuallyReceived	cyg_uint64"
+			],
+			[
+				"bytes",
+				"bytesActuallyReceived	cyg_uint64"
+			],
+			[
+				"byt",
+				"bytesActuallyReceived	cyg_uint64"
+			],
+			[
+				"mb",
+				"mboxHandle	cyg_handle_t"
+			],
+			[
+				"rece",
+				"receiveRequestMboxHandle	cyg_handle_t"
+			],
+			[
+				"conn",
+				"connectionMutex	cyg_mutex_t"
+			],
+			[
+				"h",
+				"host"
+			],
+			[
+				"nex",
+				"nextChannel	OptionValue<size_t>"
+			],
+			[
+				"opt",
+				"optionValue	const char *"
+			],
+			[
+				"Wave",
+				"WaveformHandlerInterface	class"
+			],
+			[
+				"bins",
+				"Histogram<size_t POSSIBLE_SAMPLE_VALUES, int SCALE>	class"
+			],
+			[
+				"UN",
+				"UNITTESTS_ON_TARGET"
+			],
+			[
+				"QA",
+				"QAmpApplication"
+			],
+			[
+				"do",
+				"doLog"
+			],
+			[
+				"collec",
+				"collect_coverage"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/IntelHexReader.h",
+			"settings":
+			{
+				"buffer_size": 32,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Instruction.h",
+			"settings":
+			{
+				"buffer_size": 27,
+				"line_ending": "Unix",
+				"name": "class Instruction {"
+			}
+		},
+		{
+			"file": "src/TMS7000Decoder.h",
+			"settings":
+			{
+				"buffer_size": 30,
+				"line_ending": "Unix",
+				"name": "class TMS7000Decoder {"
+			}
+		},
+		{
+			"file": "src/intelhex/IntelHexReader.go",
+			"settings":
+			{
+				"buffer_size": 1502,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dump.go",
+			"settings":
+			{
+				"buffer_size": 376,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "TMS7000-disassembler.sublime-project",
+			"settings":
+			{
+				"buffer_size": 150,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/GoSublime/GsShell.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"git di",
+				"Git: Diff Current File"
+			],
+			[
+				"git d",
+				"Git: Diff Current File"
+			],
+			[
+				"Snippet: ",
+				"Snippet: nocommit"
+			],
+			[
+				"sync",
+				"Set Syntax: C++"
+			],
+			[
+				"gitch",
+				"Git: Commit history"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git diffc",
+				"Git: Diff Current File"
+			],
+			[
+				"gitco",
+				"Git: Commit"
+			],
+			[
+				"gitad",
+				"Git: Add Current File"
+			],
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"git b",
+				"Git: Blame"
+			],
+			[
+				"gitdiff",
+				"Git: Diff Current File"
+			],
+			[
+				"gitd",
+				"Git: Diff Current File"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"git blame",
+				"Git: Blame"
+			],
+			[
+				"gitb",
+				"Git: Blame"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: for",
+				"Snippet: For Loop"
+			],
+			[
+				"packi",
+				"Package Control: Install Package"
+			],
+			[
+				"blam",
+				"Git: Blame"
+			],
+			[
+				"boot",
+				"Build: Boot qamp-application"
+			],
+			[
+				"buib",
+				"Build: Boot qamp-application"
+			],
+			[
+				"bui",
+				"Build: Boot qamp-application"
+			],
+			[
+				"synmak",
+				"Set Syntax: Makefile"
+			],
+			[
+				"snippet #",
+				"Snippet: #ifndef … #define … #endif"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"spac",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"fold",
+				"Code Folding: Unfold All"
+			],
+			[
+				"packinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"packin",
+				"Package Control: Create Binary Package File"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"synma",
+				"Set Syntax: Makefile"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"close",
+				"File: Close All"
+			],
+			[
+				"synm",
+				"Set Syntax: Makefile"
+			],
+			[
+				"gdb",
+				"SublimeGDB: Stop Debugging"
+			],
+			[
+				"sublimegdb",
+				"Preferences: SublimeGDB Settings – Default"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"proj",
+				"Project: Close"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"lint",
+				"Package Control: Install Package"
+			],
+			[
+				"zen ty",
+				"Zen Coding: Zen as you type"
+			],
+			[
+				"zen",
+				"Zen Coding: Zen as you type"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"paki",
+				"Package Control: Install Package"
+			],
+			[
+				"gita",
+				"Git: Toggle Annotations"
+			],
+			[
+				"git diff",
+				"Git: Diff Current File"
+			],
+			[
+				"gitlog",
+				"Git: Log All"
+			],
+			[
+				"gitl",
+				"Git: Log Current File"
+			],
+			[
+				"pai",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 453.0
+	},
+	"console":
+	{
+		"height": 274.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/martin/extcode/TMS7000-disassembler/TMS7000-disassembler.sublime-project",
+		"/home/martin/.config/sublime-text-2/Packages/GoSublime/GoSublime.sublime-settings",
+		"/home/martin/extcode/TMS7000-disassembler/src/intelhex/dump.go",
+		"/home/martin/.config/sublime-text-2/Packages/GoSublime/CHANGELOG.md",
+		"/home/martin/code/qamp-application/qamp/src/QAmpFPGA.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdSelftest.h",
+		"/home/martin/code/qamp-application/qamp/src/TcpConnection.cpp",
+		"/home/martin/code/qamp-application/qamp/test/DataPackagerTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/DataPackager.cpp",
+		"/home/martin/code/qamp-application/qamp/test/Mocks.h",
+		"/home/martin/code/qamp-application/qamp/src/QAmpFPGA.cpp",
+		"/home/martin/code/qamp-application/qamp/test/CmdRsCompensationTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdRsCompensation.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdRsCompensation.h",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/Command.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdReset.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdReset.h",
+		"/home/martin/code/qamp-application/qamp/test/CmdResetTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/WaveformHandler.cpp",
+		"/home/martin/code/qamp-application/qamp/src/ChannelWaveformHandler.cpp",
+		"/home/martin/code/qamp-application/qamp/src/timekeeping/TimerCommands.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdSelftest.cpp",
+		"/home/martin/.config/sublime-text-2/Packages/User/SublimeClang.sublime-settings",
+		"/home/martin/code/ecos-config-qamp-jtag/ecos.ecc",
+		"/home/martin/code/qamp-application/qamp/src/EcosThread.hpp",
+		"/home/martin/code/qamp-application/qamp/src/TcpConnection.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/api.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/ip_addr.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/ip4_addr.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/sys.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/arch/sys_arch.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/netbuf.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/ip6_addr.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/err.h",
+		"/home/martin/code/qamp-application/qamp/src/TelnetCmdShell.cpp",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/ip.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/lwip/tcp.h",
+		"/home/martin/code/qamp-application/qamp/src/ErrorHandler.h",
+		"/home/martin/code/qamp-application/qamp/src/IErrorHandler.h",
+		"/home/martin/code/qamp-application/qamp/src/DataPackager.h",
+		"/home/martin/code/qamp-application/qamp/src/ExceptionHandler.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdVersion.cpp",
+		"/home/martin/code/qamp-application/qamp/test/include/boost/math/tools/detail/polynomial_horner1_4.hpp",
+		"/home/martin/code/qamp-application/qamp/src/QAmp.cpp",
+		"/home/martin/code/qamp-application/qamp/src/LoadMonitor.h",
+		"/home/martin/code/qamp-application/qamp/src/LoadMonitor.cpp",
+		"/home/martin/code/qamp-application/measure_cpu_load.sh",
+		"/home/martin/code/qamp-application/qamp/src/CmdCCompensation.cpp",
+		"/home/martin/code/qamp-application/qamp/plot_cpu_load.py",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/CmdShell.cpp",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/CmdShell.h",
+		"/home/martin/code/qamp-application/qamp/src/WaveformHandler.h",
+		"/home/martin/code/qamp-application/qamp/src/ChannelWaveformHandler.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdVOffset.cpp",
+		"/home/martin/code/qamp-application/qamp/src/QAmpConfiguration.cpp",
+		"/home/martin/code/ecos-config-qamp-ram/ecos.ecc",
+		"/home/martin/code/redboot-qamp/ecos.ecc",
+		"/home/martin/code/qamp-application/build_all.sh",
+		"/home/martin/.config/sublime-text-2/Packages/User/nocommit.sublime-snippet",
+		"/home/martin/code/qamp-application/qamp/src/DataCollector.cpp",
+		"/home/martin/code/qamp-application/qamp/src/DataCollector.h",
+		"/home/martin/code/qamp-application/qamp/test/DataCollectorTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/PagedCircularBuffer.h",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/test/TestUtils.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdWaveform.cpp",
+		"/home/martin/code/qamp-application/qamp/src/IDataCollector.h",
+		"/tmp/svn/svnroot/hooks/pre-commit",
+		"/home/martin/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/martin/bin/svn-nocommit-hook.py",
+		"/home/martin/bin/svn-nosubmit-hook.py",
+		"/home/martin/code/qamp-application/qamp/src/CmdDebug.cpp",
+		"/home/martin/code/Applications/opentest.c",
+		"/home/martin/code/qamp-application/qamp/src/CmdPrompt.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdVOffset.h",
+		"/home/martin/code/qamp-application/qamp/src/Waveform.h",
+		"/home/martin/code/qamp-application/qamp/src/QAmp.h",
+		"/home/martin/code/qamp-application/qamp/test/CmdVOffsetTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/QCmdRunWaveform.cpp",
+		"/home/martin/code/qamp-application/qamp/qamptime.py",
+		"/home/martin/code/qamp-application/qamp/test/CmdRSCompensationTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdWaveform.h",
+		"/home/martin/code/qamp-application/qamp/src/ResultConnection.h",
+		"/home/martin/code/qamp-application/qamp/test/PagedCircularBufferTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdVersion.h",
+		"/home/martin/code/qamp-application/qamp-application.sublime-project",
+		"/home/martin/code/qamp-application/qamp/src/ResultConnection.cpp",
+		"/home/martin/code/qamp-application/qamp/test/CmdIOffsetTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdIOffset.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdIOffset.cpp",
+		"/home/martin/code/qamp-application/qamp/test/ResultConnectionTest.cpp",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/StaticObjectPool.h",
+		"/home/martin/code/qamp-application/qamp/src/application/qubeamp_main.cpp",
+		"/home/martin/code/qamp-application/makefile.host.mk",
+		"/home/martin/code/qamp-application/qamp/test/MemoryMapTest.cpp",
+		"/home/martin/code/qamp-application/qamp/test/CmdCCompensationTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdCCompensation.h",
+		"/home/martin/code/qamp-application/currentTime=0 newestSampleEndTime=0currentTime=512 newestSampleEndTime=0currentTime=1024 newestSampleEndTime=0currentTime=2560 newestSampleEndTime=0currentTime=3072 newestSampleEndTime=0currentTime=5120 newestSampleEndTime=0/home/martin/code/qamp-application/qamp/test/DataPackagerTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/cyg/hal/hal_cache.h",
+		"/home/martin/code/qamp-application/qamp/src/DMA.cpp",
+		"/home/martin/code/qamp-application/qamp/src/DMA.h",
+		"/home/martin/.config/sublime-text-2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/martin/code/qamp-application/qamp/src/QAmpConfiguration.h",
+		"/home/martin/code/qamp-application/qamp/src/DataPackagerInterface.h",
+		"/home/martin/.config/sublime-text-2/Packages/User/C++.sublime-settings",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/cyg/hal/plf_io.h",
+		"/home/martin/code/qamp-application/qamp/src/unittest/host/include/cyg/hal/sam9g45ek.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdInstrument.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdInstrument.cpp",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/CmdStringLexer.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdBoard.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdBoard.h",
+		"/home/martin/code/qamp-application/qamp/test/QAmpConfigurationTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdException.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdException.h",
+		"/home/martin/code/qamp-application/qamp/src/DataServerProtocol.h",
+		"/home/martin/code/qamp-application/qamp/src/ClientConnection.cpp",
+		"/home/martin/code/qamp-application/qamp/test/DataServerProtocolTest.cpp",
+		"/home/martin/code/qamp-application/qamp/src/IErrorHandler.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdInjectError.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdInjectError.h",
+		"/home/martin/code/qamp-application/makefile",
+		"/home/martin/code/qamp-application/qamp/src/timekeeping/Alarm.cpp",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/FlexPtr.hpp",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/Histogram.h",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/CmdParser.cpp",
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/CmdParser.h",
+		"/home/martin/code/qamp-application/qamp/src/CmdQuit.cpp",
+		"/home/martin/code/qamp-application/qamp/src/CmdQuit.h"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"o",
+			"\"\n",
+			"sendNextChunkOfData",
+			"sendDataBuffer",
+			"REXMIT",
+			"nagle",
+			"connection",
+			"packed",
+			"CHECKSUMS_CHECK",
+			"PBUF_POOL_OVERRIDE_HEADER",
+			"CHECKSUMS_CHECK_IP",
+			"PBUF_POOL_OVERRIDE_HEADER",
+			"POSIX_CLOCK_TYPES",
+			"POSIX_CLOCK",
+			"endConnectionFlag",
+			"expectMultipleChunks",
+			"10.1.24.2",
+			"10",
+			"setRsCompVoltage",
+			"Compensation",
+			"-1000",
+			"CmdC",
+			"config",
+			"ResetObjects",
+			"NO_OF_SAMPLES_DELAY_BETWEEN_WAVEFORM_AND_SAMPLING",
+			"	",
+			"expectDataChunkToBeSent(checksumPointer, dataPointer);",
+			"MEASUREMENT_INPUT_BUFFER_PAGE_SIZE",
+			"TMeasurementSample",
+			"MEASUREMENT_INPUT_BUFFER_NO_OF_PAGES",
+			"fpga",
+			"elementNo",
+			"offsetIntoBuffer",
+			"noOfPages",
+			"IOffset",
+			"WillOnce",
+			"EXPECT_CALL",
+			"printf",
+			"CACHED",
+			"SAM9G45EK_SDRAM_CACHED_VIRT_BASE",
+			"));",
+			"CYGARC_",
+			"(unsigned)",
+			"totalNoOfElements",
+			"totalElementNo",
+			"lengthPerChannel",
+			"	",
+			"EXCLUDE_CHANNEL_FROM_RUN",
+			"lengthPerChannel",
+			"dataPointer",
+			"result",
+			"checkGetSampleDataBlocks",
+			"		checksumPointer0.pData = &checksumPage0;",
+			"datacoll",
+			"checkDataSentOnTime",
+			"int",
+			"unsigned int",
+			"getBufferedData",
+			"ensureConnectionOpen",
+			"();\n",
+			";\n",
+			"int",
+			"fpga",
+			"int PAGE_SIZE, int NO_OF_PAGES",
+			"unsigned int PAGE_SIZE, unsigned int NO_OF_PAGES",
+			"datacoll",
+			"TBufferElementNo",
+			"pagedci",
+			"length",
+			"queuedBytes",
+			"nextHeaderIndex",
+			"DataServerProtocol",
+			"currentChunk",
+			"Pointer",
+			"Iterator",
+			"DataserverProtocol",
+			"DataServerProtocol",
+			"DataserverProtocol",
+			"clientConnection.",
+			"dataConnection",
+			"timestamp",
+			"logC",
+			"SenderLogIterator",
+			"SenderLog",
+			"myiterator",
+			"sentBytes",
+			"();\n",
+			"buffer",
+			"WaveformHandler",
+			"FPGAVoltageUnitsToMillivolts",
+			"50",
+			"asap",
+			"NoVoltage",
+			"FPGAChannel::MAX_SEGMENTS",
+			"pEstablishedConnection",
+			"inUse",
+			"new",
+			"sendBufferFlag",
+			"receiveBufferMutex",
+			"receiveeventflag",
+			"receiveflag",
+			"dataLostFlag",
+			"data",
+			"dataLostFlag",
+			"netconn",
+			"voffset",
+			"DEFAULT_HOLDING_VOLTAGE",
+			"run",
+			"segmentparts",
+			"kill",
+			"load",
+			"gdb.expect(prompt)",
+			"gdb.expect",
+			"zero",
+			"bool",
+			"invalid",
+			"data_invalid",
+			"headerSize",
+			"XML",
+			"kDefaultOutputFile",
+			"xml",
+			"printfSync",
+			"printfS",
+			"cliblock",
+			"Expectation",
+			"getConnection",
+			"staticNetconnCallback",
+			"TcpConnectionTable"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"RsComp",
+			"16000",
+			"CmdRs",
+			"   ",
+			"    ",
+			"     ",
+			")));",
+			"Hex(CYGARC_",
+			"Hex(",
+			"    ",
+			"EXCLUDE_BOARD_FROM_CURRENT_RUN",
+			"cyg_uint32",
+			"getQueuedBytes",
+			"unsigned int PAGE_SIZE, unsigned int NO_OF_PAGES",
+			"clientConnection->",
+			"clientConnection",
+			"c",
+			"NO_OF_ENTRIES_IN_WAVEFORM_TABLE"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/IntelHexReader.h",
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E111",
+								"E201",
+								"E203",
+								"E221",
+								"E225",
+								"E231",
+								"E501",
+								"E502",
+								"E301",
+								"E302",
+								"E303",
+								"W291",
+								"W292",
+								"W293",
+								"W391"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Instruction.h",
+					"settings":
+					{
+						"buffer_size": 27,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27,
+								27
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "class Instruction {",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E111",
+								"E201",
+								"E203",
+								"E221",
+								"E225",
+								"E231",
+								"E501",
+								"E502",
+								"E301",
+								"E302",
+								"E303",
+								"W291",
+								"W292",
+								"W293",
+								"W391"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/TMS7000Decoder.h",
+					"settings":
+					{
+						"buffer_size": 30,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								30
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "class TMS7000Decoder {",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E111",
+								"E201",
+								"E203",
+								"E221",
+								"E225",
+								"E231",
+								"E501",
+								"E502",
+								"E301",
+								"E302",
+								"E303",
+								"W291",
+								"W292",
+								"W293",
+								"W391"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/intelhex/IntelHexReader.go",
+					"settings":
+					{
+						"buffer_size": 1502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								536,
+								536
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E111",
+								"E201",
+								"E203",
+								"E221",
+								"E225",
+								"E231",
+								"E501",
+								"E502",
+								"E301",
+								"E302",
+								"E303",
+								"W291",
+								"W292",
+								"W293",
+								"W391"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Go/Go.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 63.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "dump.go",
+					"settings":
+					{
+						"buffer_size": 376,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								362,
+								362
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E111",
+								"E201",
+								"E203",
+								"E221",
+								"E225",
+								"E231",
+								"E501",
+								"E502",
+								"E301",
+								"E302",
+								"E303",
+								"W291",
+								"W292",
+								"W293",
+								"W391"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Go/Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "TMS7000-disassembler.sublime-project",
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E111",
+								"E201",
+								"E203",
+								"E221",
+								"E225",
+								"E231",
+								"E501",
+								"E502",
+								"E301",
+								"E302",
+								"E303",
+								"W291",
+								"W292",
+								"W293",
+								"W391"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 94.0
+	},
+	"output.clang_static_analyzer":
+	{
+		"height": 269.0
+	},
+	"output.exec":
+	{
+		"height": 492.0
+	},
+	"output.git":
+	{
+		"height": 114.0
+	},
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"qampfp",
+				"qamp/src/QAmpFPGA.cpp"
+			],
+			[
+				"cmdc",
+				"qamp/src/CmdCCompensation.cpp"
+			],
+			[
+				"cmdr",
+				"qamp/src/CmdReset.cpp"
+			],
+			[
+				"cmdst",
+				"cpp-sophionlibs/test/CmdStringLexerTest.cpp"
+			],
+			[
+				"cmdstle",
+				"cpp-sophionlibs/src/CmdShell/CmdStringLexer.cpp"
+			],
+			[
+				"cmdsh",
+				"cpp-sophionlibs/src/CmdShell/CmdShell.cpp"
+			],
+			[
+				"cmdw",
+				"qamp/src/CmdWaveform.cpp"
+			],
+			[
+				"qampco",
+				"qamp/src/QAmpConfiguration.cpp"
+			],
+			[
+				"qamp",
+				"qamp/src/QAmp.h"
+			],
+			[
+				"fpga",
+				"qamp/src/QAmpFPGA.h"
+			],
+			[
+				"self",
+				"qamp/src/CmdSelftest.h"
+			],
+			[
+				"timer",
+				"qamp/src/timekeeping/TimerCommands.cpp"
+			],
+			[
+				"cmd",
+				"qamp/src/CmdReset.cpp"
+			],
+			[
+				"wave",
+				"qamp/src/WaveformHandler.cpp"
+			],
+			[
+				"ch",
+				"qamp/src/ChannelWaveformHandler.cpp"
+			],
+			[
+				"channe",
+				"qamp/src/ChannelWaveformHandler.cpp"
+			],
+			[
+				"cmdre",
+				"qamp/src/CmdReset.cpp"
+			],
+			[
+				"rs",
+				"qamp/test/CmdRsCompensationTest.cpp"
+			],
+			[
+				"qamfp",
+				"qamp/src/QAmpFPGA.cpp"
+			],
+			[
+				"mock",
+				"qamp/test/Mocks.h"
+			],
+			[
+				"datapa",
+				"qamp/src/DataPackager.cpp"
+			],
+			[
+				"cmdv",
+				"qamp/src/CmdVersion.cpp"
+			],
+			[
+				"exc",
+				"qamp/src/ExceptionHandler.cpp"
+			],
+			[
+				"ierr",
+				"qamp/src/IErrorHandler.h"
+			],
+			[
+				"erro",
+				"qamp/src/ErrorHandler.h"
+			],
+			[
+				"wavefoh",
+				"qamp/src/WaveformHandler.cpp"
+			],
+			[
+				"tcp",
+				"qamp/src/unittest/host/include/lwip/tcp.h"
+			],
+			[
+				"ip4.h",
+				"qamp/test/include/boost/math/tools/detail/polynomial_horner1_4.hpp"
+			],
+			[
+				"telnet",
+				"qamp/src/TelnetCmdShell.cpp"
+			],
+			[
+				"err",
+				"qamp/src/unittest/host/include/lwip/err.h"
+			],
+			[
+				"api",
+				"qamp/src/unittest/host/include/lwip/api.h"
+			],
+			[
+				"tcpcon",
+				"qamp/src/TcpConnection.cpp"
+			],
+			[
+				"qamc",
+				"qamp/src/QAmpConfiguration.cpp"
+			],
+			[
+				"cmdvo",
+				"qamp/src/CmdVOffset.cpp"
+			],
+			[
+				"chan",
+				"qamp/src/ChannelWaveformHandler.h"
+			],
+			[
+				"cmdrs",
+				"qamp/src/CmdRsCompensation.cpp"
+			],
+			[
+				"fp",
+				"qamp/src/QAmpFPGA.h"
+			],
+			[
+				"cmdshel",
+				"cpp-sophionlibs/src/CmdShell/CmdShell.cpp"
+			],
+			[
+				"plo",
+				"qamp/plot_cpu_load.py"
+			],
+			[
+				"load",
+				"qamp/src/LoadMonitor.h"
+			],
+			[
+				"ecos",
+				"qamp/src/EcosThread.hpp"
+			],
+			[
+				"qam",
+				"qamp/src/QAmp.cpp"
+			],
+			[
+				"testut",
+				"cpp-sophionlibs/test/TestUtils.h"
+			],
+			[
+				"idata",
+				"qamp/src/IDataCollector.h"
+			],
+			[
+				"paged",
+				"qamp/src/PagedCircularBuffer.h"
+			],
+			[
+				"fpg",
+				"qamp/src/QAmpFPGA.h"
+			],
+			[
+				"datacolt",
+				"qamp/test/DataCollectorTest.cpp"
+			],
+			[
+				"qamph",
+				"qamp/src/QAmpFPGA.h"
+			],
+			[
+				"",
+				"qamp/src/QAmpFPGA.cpp"
+			],
+			[
+				"q",
+				"qamp/src/QAmp.cpp"
+			],
+			[
+				"wavef",
+				"qamp/src/Waveform.h"
+			],
+			[
+				"reset",
+				"qamp/src/CmdReset.cpp"
+			],
+			[
+				"pro",
+				"qamp/src/CmdPrompt.cpp"
+			],
+			[
+				"debu",
+				"qamp/src/CmdDebug.cpp"
+			],
+			[
+				"data",
+				"qamp/src/DataCollector.cpp"
+			],
+			[
+				"qa",
+				"qamp/src/QAmpFPGA.h"
+			],
+			[
+				"cmru",
+				"qamp/src/QCmdRunWaveform.cpp"
+			],
+			[
+				"datac",
+				"qamp/src/DataCollector.h"
+			],
+			[
+				"moc",
+				"qamp/test/Mocks.h"
+			],
+			[
+				"pagedcb",
+				"qamp/src/PagedCircularBuffer.h"
+			],
+			[
+				"resu",
+				"qamp/src/ResultConnection.h"
+			],
+			[
+				"versionh",
+				"qamp/src/CmdVersion.h"
+			],
+			[
+				"pagedc",
+				"qamp/test/PagedCircularBufferTest.cpp"
+			],
+			[
+				"datact",
+				"qamp/test/DataCollectorTest.cpp"
+			],
+			[
+				"datacol",
+				"qamp/src/DataCollector.cpp"
+			],
+			[
+				"qamf",
+				"qamp/src/QAmpFPGA.h"
+			],
+			[
+				"datacot",
+				"qamp/test/DataCollectorTest.cpp"
+			],
+			[
+				"version",
+				"qamp/src/CmdVersion.cpp"
+			],
+			[
+				"cmdi",
+				"qamp/src/CmdIOffset.cpp"
+			],
+			[
+				"datai",
+				"qamp/src/DataPackagerInterface.h"
+			],
+			[
+				"dapate",
+				"qamp/test/DataPackagerTest.cpp"
+			],
+			[
+				"datap",
+				"qamp/src/DataPackager.cpp"
+			],
+			[
+				"re",
+				"qamp/src/ResultConnection.h"
+			],
+			[
+				"hal_c",
+				"qamp/src/unittest/host/include/cyg/hal/hal_cache.h"
+			],
+			[
+				"staticob",
+				"cpp-sophionlibs/src/StaticObjectPool.h"
+			],
+			[
+				"plf",
+				"qamp/src/unittest/host/include/cyg/hal/plf_io.h"
+			],
+			[
+				"main",
+				"qamp/src/application/qubeamp_main.cpp"
+			],
+			[
+				"mem",
+				"qamp/test/MemoryMapTest.cpp"
+			],
+			[
+				"comman",
+				"cpp-sophionlibs/src/CmdShell/Command.h"
+			],
+			[
+				"cmdinstr",
+				"qamp/src/CmdInstrument.cpp"
+			],
+			[
+				"qamp.h",
+				"qamp/src/QAmp.h"
+			],
+			[
+				"dma",
+				"qamp/src/DMA.h"
+			],
+			[
+				"dm",
+				"qamp/src/DMA.cpp"
+			],
+			[
+				"tcpco",
+				"qamp/src/TcpConnection.cpp"
+			],
+			[
+				"cmdstr",
+				"cpp-sophionlibs/src/CmdShell/CmdStringLexer.cpp"
+			],
+			[
+				"dataspro",
+				"qamp/src/DataServerProtocol.h"
+			],
+			[
+				"config",
+				"qamp/src/QAmpConfiguration.cpp"
+			],
+			[
+				"cmdbo",
+				"qamp/src/CmdBoard.cpp"
+			],
+			[
+				"cmdquit",
+				"qamp/src/CmdQuit.cpp"
+			],
+			[
+				"cmdpa",
+				"cpp-sophionlibs/src/CmdShell/CmdParser.cpp"
+			],
+			[
+				"hist",
+				"cpp-sophionlibs/src/Histogram.h"
+			],
+			[
+				"flex",
+				"cpp-sophionlibs/src/FlexPtr.hpp"
+			],
+			[
+				"clien",
+				"qamp/src/ClientConnection.cpp"
+			],
+			[
+				"ala",
+				"qamp/src/timekeeping/Alarm.cpp"
+			],
+			[
+				"versio",
+				"qamp/src/CmdVersion.cpp"
+			],
+			[
+				"excp",
+				"qamp/src/ExceptionHandler.cpp"
+			],
+			[
+				"inje",
+				"qamp/src/CmdInjectError.cpp"
+			],
+			[
+				"inj",
+				"qamp/src/CmdInjectError.cpp"
+			],
+			[
+				"dataserph",
+				"qamp/src/DataServerProtocol.h"
+			],
+			[
+				"testu",
+				"cpp-sophionlibs/test/TestUtils.h"
+			],
+			[
+				"dataspr",
+				"qamp/src/DataServerProtocol.h"
+			],
+			[
+				"datacoll",
+				"qamp/src/DataCollector.cpp"
+			],
+			[
+				"cli",
+				"qamp/src/ClientConnection.cpp"
+			],
+			[
+				"datapro",
+				"qamp/src/DataServerProtocol.h"
+			],
+			[
+				"datas",
+				"qamp/test/DataServerProtocolTest.cpp"
+			],
+			[
+				"error",
+				"qamp/test/ErrorHandlerTest.cpp"
+			],
+			[
+				"cminj",
+				"qamp/src/CmdInjectError.cpp"
+			],
+			[
+				"ier",
+				"qamp/src/IErrorHandler.h"
+			],
+			[
+				"commandma",
+				"cpp-sophionlibs/src/CmdShell/CommandManager.cpp"
+			],
+			[
+				"qamp.c",
+				"qamp/src/QAmp.cpp"
+			],
+			[
+				"dataco",
+				"qamp/src/DataCollector.cpp"
+			],
+			[
+				"ierror",
+				"qamp/src/IErrorHandler.h"
+			],
+			[
+				"res",
+				"qamp/src/ResultConnection.h"
+			],
+			[
+				"cmdserv",
+				"qamp/src/CmdServer.cpp"
+			],
+			[
+				"waveform",
+				"qamp/src/WaveformHandler.cpp"
+			],
+			[
+				"chann",
+				"qamp/src/ChannelWaveformHandler.cpp"
+			],
+			[
+				"tel",
+				"qamp/src/TelnetCmdShell.cpp"
+			],
+			[
+				"cha",
+				"qamp/test/ChannelWaveformHandlerTest.cpp"
+			],
+			[
+				"client",
+				"qamp/src/ClientConnection.cpp"
+			],
+			[
+				"cmdwa",
+				"qamp/src/CmdWaveform.cpp"
+			],
+			[
+				"datase",
+				"qamp/test/DataServerProtocolTest.cpp"
+			],
+			[
+				"dataserv",
+				"qamp/src/DataServerProtocol.h"
+			],
+			[
+				"chun",
+				"cpp-sophionlibs/test/ChunkIteratorTest.cpp"
+			],
+			[
+				"chunk",
+				"cpp-sophionlibs/src/ChunkIterator.h"
+			],
+			[
+				"result",
+				"qamp/test/ResultConnectionTest.cpp"
+			],
+			[
+				"mo",
+				"qamp/test/Mocks.h"
+			],
+			[
+				"ire",
+				"qamp/src/IResultConnection.h"
+			],
+			[
+				"page",
+				"qamp/src/PagedCircularBuffer.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/martin/code/qamp-application/qamp-application.sublime-project"
+			],
+			[
+				"fp",
+				"/home/martin/code/qamp-fpga/qamp-fpga.sublime-project"
+			],
+			[
+				"fpfa",
+				"/home/martin/code/qamp-fpga/qamp-fpga.sublime-project"
+			],
+			[
+				"te",
+				"/home/martin/code/qamp-testsystem/qamp-testsystem.sublime-project"
+			],
+			[
+				"qampt",
+				"/home/martin/code/qamp-testsystem/qamp-testsystem.sublime-project"
+			],
+			[
+				"fpga",
+				"/home/martin/code/qamp-fpga/qamp-fpga.sublime-project"
+			],
+			[
+				"turn",
+				"/home/martin/code/turntable/turntable.sublime-project"
+			],
+			[
+				"qamp",
+				"/home/martin/code/qamp-testsystem/qamp-testsystem.sublime-project"
+			],
+			[
+				"test",
+				"/home/martin/code/qamp-testsystem/qamp-testsystem.sublime-project"
+			],
+			[
+				"jq",
+				"/home/martin/code/jquery/jquery.sublime-project"
+			],
+			[
+				"ecos",
+				"/home/martin/code/eCos/eCos.sublime-project"
+			],
+			[
+				"ec",
+				"/home/martin/code/eCos/eCos.sublime-project"
+			],
+			[
+				"e",
+				"/home/martin/code/eCos/eCos.sublime-project"
+			],
+			[
+				"pdf",
+				"/home/martin/extcode/pdfcrack-0.11/pdfcrack.sublime-project"
+			],
+			[
+				"pd",
+				"/home/martin/extcode/pdfcrack-0.11/pdfcrack.sublime-project"
+			],
+			[
+				"jqu",
+				"/home/martin/code/jquery/jquery.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 276.0,
+	"status_bar_visible": true
+}

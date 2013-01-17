@@ -1,0 +1,10 @@
+{
+"build_systems":
+    [
+        {
+            "cmd": "go run dump.go",
+            "name": "run dump",
+            "shell": "true"
+        }
+    ]
+}
