@@ -520,53 +520,30 @@
 	"buffers":
 	[
 		{
-			"file": "src/IntelHexReader.h",
-			"settings":
-			{
-				"buffer_size": 32,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Instruction.h",
-			"settings":
-			{
-				"buffer_size": 27,
-				"line_ending": "Unix",
-				"name": "class Instruction {"
-			}
-		},
-		{
-			"file": "src/TMS7000Decoder.h",
-			"settings":
-			{
-				"buffer_size": 30,
-				"line_ending": "Unix",
-				"name": "class TMS7000Decoder {"
-			}
-		},
-		{
 			"file": "src/intelhex/IntelHexReader.go",
 			"settings":
 			{
-				"buffer_size": 1502,
-				"line_ending": "Unix"
+				"buffer_size": 2725,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "dump.go",
 			"settings":
 			{
-				"buffer_size": 376,
-				"line_ending": "Unix"
+				"buffer_size": 622,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "TMS7000-disassembler.sublime-project",
+			"contents": "package tms7000\n\nimport (\n        \"fmt\"\n)\n\ntype AddressingMode struct {\n        args      uint\n        argformat func([]byte) string\n}\n\nfunc noArgs(output string) func([]byte) string {\n        return func([]byte) string {\n                return output\n        }\n}\n\nfunc oneArg(format string) func([]byte) string {\n        return func(args []byte) string {\n                return fmt.Sprintf(format, args[0])\n        }\n}\n\nfunc twoArgs(format string) func([]byte) string {\n        return func(args []byte) string {\n                return fmt.Sprintf(format, args[0], args[1])\n        }\n}\n\nfunc label16bit(format string) func([]byte) string {\n        return func(args []byte) string {\n                return fmt.Sprintf(format, uint16(args[0])<<8+uint16(args[1]))\n        }\n}\n\nfunc iop16bitOneReg(format string) func([]byte) string {\n        return func(args []byte) string {\n                bigval := uint16(args[0])<<8 + uint16(args[1])\n                return fmt.Sprintf(format, bigval, args[2])\n        }\n}\n\nvar F_None = AddressingMode{0, noArgs(\"\")}\n\nvar F_A = AddressingMode{0, noArgs(\"A\")}\nvar F_B = AddressingMode{0, noArgs(\"B\")}\nvar F_Rn = AddressingMode{1, oneArg(\"R%d\")}\nvar F_Rn_A = AddressingMode{1, oneArg(\"R%d,A\")}\nvar F_Rn_B = AddressingMode{1, oneArg(\"R%d,B\")}\nvar F_A_Rn = AddressingMode{1, oneArg(\"A,R%d\")}\nvar F_B_Rn = AddressingMode{1, oneArg(\"B,R%d\")}\n\nvar F_iop_A = AddressingMode{1, oneArg(\"%%%d,A\")}\nvar F_iop_B = AddressingMode{1, oneArg(\"%%%d,B\")}\nvar F_iop_Rn = AddressingMode{2, twoArgs(\"%%%d,R%d\")}\nvar F_iop16_Rn = AddressingMode{3, iop16bitOneReg(\"%%>%04x,R%d\")}\n\nvar F_A_B = AddressingMode{1, noArgs(\"A,B\")}\nvar F_B_A = AddressingMode{1, noArgs(\"B,A\")}\n\nvar F_Rn_Rn = AddressingMode{2, twoArgs(\"R%d,R%d\")}\nvar F_A_Pn = AddressingMode{1, oneArg(\"A,P%d\")}\nvar F_B_Pn = AddressingMode{1, oneArg(\"B,P%d\")}\nvar F_Pn_A = AddressingMode{1, oneArg(\"P%d,A\")}\nvar AMPeripheralB = AddressingMode{1, oneArg(\"P%d,B\")}\nvar AMPeripheralImmediate = AddressingMode{2, twoArgs(\"%%%d,P%d\")}\n\nvar AMDirectLabel = AddressingMode{2, label16bit(\"@>%04x\")}\nvar AMDirectLabelIndexedB = AddressingMode{2, label16bit(\"@>%04x(B)\")}\nvar AMDirectLabelIndexedBReg = AddressingMode{3, iop16bitOneReg(\"%>%04x(B),R%d\")}\n\nvar AMRegisterFileIndirect AddressingMode = AddressingMode{1, oneArg(\"*R%d\")}\n\n/*\nvar AMProgramCounterRelative AddressingMode = AddressingMode{\"PC relative\", \"%%>%s,%s,%s\"}\nvar AMDirectMemory AddressingMode = AddressingMode{\"direct memory\", \"@%s\"}\nvar AMIndexed AddressingMode = AddressingMode{\"indexed\", \"@%s(%s)\"}\n*/\n\ntype Instruction struct {\n        name    string\n        comment string\n        amode   AddressingMode\n}\n\nfunc (self *Instruction) String(args []byte) string {\n        return fmt.Sprintf(\"%s %s\", self.name, self.amode.argformat(args))\n}\n\nfunc (self *Instruction) Args() uint {\n        return self.amode.args\n}\n\ntype InstructionSet map[byte]Instruction\n\nvar TMS7000InstructionSet = InstructionSet{\n\n        0x69:   {\"ADC\", \"(A) + (B) + (C) -> (B)\", F_A_B},\n        0x19:   {\"ADC\", \"(Rs) + (A) + (C) -> (A)\", F_Rn_A},\n        0x39:   {\"ADC\", \"(Rs) + (B) + (C) -> (B)\", F_Rn_B},\n        0x49:   {\"ADC\", \"(Rs) + (Rd) + (C) -> (Rd)\", F_Rn_Rn},\n        0x29:   {\"ADC\", \"%iop + (A) + (C) -> (A)\", F_iop_A},\n        0x59:   {\"ADC\", \"%iop + (B) + (C) -> (B)\", F_iop_B},\n        0x79:   {\"ADC\", \"%iop + (Rd) + (C) -> (Rd)\", F_iop_Rn},\n\n        0x68:   {\"ADD\", \"(A) + (B) -> (B)\", F_A_B},\n        0x18:   {\"ADD\", \"(Rs) + (A) -> (A)\", F_Rn_A},\n        0x38:   {\"ADD\", \"(Rs) + (B) -> (B)\", F_Rn_B},\n        0x48:   {\"ADD\", \"(Rs) + (Rd) -> (Rd)\", F_Rn_Rn},\n        0x28:   {\"ADD\", \"%iop + (A) -> (A)\", F_iop_A},\n        0x58:   {\"ADD\", \"%iop + (B) -> (B)\", F_iop_B},\n        0x78:   {\"ADD\", \"%iop + (Rd) -> (Rd)\", F_iop_Rn},\n\n        0x63:   {\"AND\", \"(A) AND (B) -> (B)\", F_A_B},\n        0x13:   {\"AND\", \"(Rs) AND (A) -> (A)\", F_Rn_A},\n        0x33:   {\"AND\", \"(Rs) AND (B) -> (B)\", F_Rn_B},\n        0x43:   {\"AND\", \"(Rs) AND (Rd) -> (Rd)\", F_Rn_Rn},\n        0x23:   {\"AND\", \"%iop AND (A) -> (A)\", F_iop_A},\n        0x53:   {\"AND\", \"%iop AND (B) -> (B)\", F_iop_B},\n        0x73:   {\"AND\", \"%iop AND (Rd) -> (Rd)\", F_iop_Rn},\n\n        0x83:   {\"ANDP\", \"(A) AND (Pn) -> (Pn)\", F_A_Pn},\n        0x93:   {\"ANDP\", \"(B) AND (Pn) -> (Pn)\", F_B_Pn},\n        0xA3:   {\"ANDP\", \"%iop AND (Pn) -> (Pn)\", AMPeripheralImmediate},\n\n        0x8c:   {\"BR\", \"@LABEL -> PC\", AMDirectLabel},\n        0xac:   {\"BR\", \"@LABEL(B) -> PC\", AMDirectLabelIndexedB},\n        0x9c:   {\"BR\", \"*Rn -> PC\", AMRegisterFileIndirect},\n\n        0x8e:   {\"CALL\", \"PUSH PC, @LABEL -> PC\", AMDirectLabel},\n        0xae:   {\"CALL\", \"PUSH PC, @LABEL(B) -> PC\", AMDirectLabelIndexedB},\n        0x9e:   {\"CALL\", \"PUSH PC, *Rn -> PC\", AMRegisterFileIndirect},\n\n        0xb5:   {\"CLR\", \"0 -> (A)\", F_A},\n        0xc6:   {\"CLR\", \"0 -> (B)\", F_B},\n        0xd5:   {\"CLR\", \"0 -> (Rd)\", F_Rn},\n\n        0xb2:   {\"DEC\", \"\", F_A},\n        0xc2:   {\"DEC\", \"\", F_B},\n        0xd2:   {\"DEC\", \"\", F_Rn},\n\n        0x06:   {\"DINT\", \"Clear global interrupt enable bit\", F_None},\n\n        0x05:   {\"EINT\", \"Set global interrupt enable bit\", F_None},\n\n        0xb3:   {\"INC\", \"\", F_A},\n        0xc3:   {\"INC\", \"\", F_B},\n        0xd3:   {\"INC\", \"\", F_Rn},\n\n        0x0d:   {\"LDSP\", \"(B) -> (SP) Load SP with register B's contents\", F_None},\n\n        0x00:   {\"NOP\", \"\", F_None},\n\n        0xc0:   {\"MOV\", \"\", F_A_B},\n        0xd0:   {\"MOV\", \"\", F_Rn_A},\n        0x62:   {\"MOV\", \"\", F_B_A},\n        0xd1:   {\"MOV\", \"\", F_Rn_B},\n        0x12:   {\"MOV\", \"\", F_A_Rn},\n        0x32:   {\"MOV\", \"\", F_B_Rn},\n        0x42:   {\"MOV\", \"\", F_Rn_Rn},\n        0x22:   {\"MOV\", \"\", F_iop_A},\n        0x52:   {\"MOV\", \"\", F_iop_B},\n        0x72:   {\"MOV\", \"\", F_iop_Rn},\n\n        0x88:   {\"MOVD\", \"\", F_iop16_Rn},\n        0xa8:   {\"MOVD\", \"\", AMDirectLabelIndexedBReg},\n        0x98:   {\"MOVD\", \"\", F_Rn_Rn},\n\n        0x82:   {\"MOVP\", \"\", F_A_Pn},\n        0x92:   {\"MOVP\", \"\", F_B_Pn},\n        0xA2:   {\"MOVP\", \"\", AMPeripheralImmediate},\n        0x80:   {\"MOVP\", \"\", F_Pn_A},\n        0x91:   {\"MOVP\", \"\", AMPeripheralB},\n\n        0x0b:   {\"RETI\", \"return from interrupt\", F_None},\n\n        0x0a:   {\"RETS\", \"return from subroutine\", F_None},\n\n        0x8b:   {\"STA\", \"(A) -> @LABEL\", AMDirectLabel},\n        0xab:   {\"STA\", \"(A) -> @LABEL(B)\", AMDirectLabelIndexedB},\n        0x9b:   {\"STA\", \"(A) -> *Rn\", AMRegisterFileIndirect},\n\n        0x09:   {\"STSP\", \"(SP) -> (B) Copy the SP into Register B\", F_None},\n}\n",
+			"file": "src/tms7000/instructions.go",
+			"file_size": 6737,
+			"file_write_time": 130030118375504129,
 			"settings":
 			{
-				"buffer_size": 150,
-				"line_ending": "Unix"
+				"buffer_size": 6455,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -822,6 +799,10 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Hans/Documents/GitHub/TMS7000-disassembler/src/TMS7000Decoder.h",
+		"/C/Users/Hans/Documents/GitHub/TMS7000-disassembler/src/IntelHexReader.h",
+		"/C/Users/Hans/Documents/GitHub/TMS7000-disassembler/src/Instruction.h",
+		"/C/Users/Hans/Documents/GitHub/TMS7000-disassembler/TMS7000-disassembler.sublime-project",
 		"/home/martin/extcode/TMS7000-disassembler/TMS7000-disassembler.sublime-project",
 		"/home/martin/.config/sublime-text-2/Packages/GoSublime/GoSublime.sublime-settings",
 		"/home/martin/extcode/TMS7000-disassembler/src/intelhex/dump.go",
@@ -945,11 +926,7 @@
 		"/home/martin/code/qamp-application/makefile",
 		"/home/martin/code/qamp-application/qamp/src/timekeeping/Alarm.cpp",
 		"/home/martin/code/qamp-application/cpp-sophionlibs/src/FlexPtr.hpp",
-		"/home/martin/code/qamp-application/cpp-sophionlibs/src/Histogram.h",
-		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/CmdParser.cpp",
-		"/home/martin/code/qamp-application/cpp-sophionlibs/src/CmdShell/CmdParser.h",
-		"/home/martin/code/qamp-application/qamp/src/CmdQuit.cpp",
-		"/home/martin/code/qamp-application/qamp/src/CmdQuit.h"
+		"/home/martin/code/qamp-application/cpp-sophionlibs/src/Histogram.h"
 	],
 	"find":
 	{
@@ -968,6 +945,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"AMPeripheralA",
+			"AMBPeripheral",
+			"AMAPeripheral",
+			"AMDualRegister",
+			"F_A_Rn",
+			"AMBARegister",
+			"AMABRegister",
+			"AM16bitImmediateOpRegister",
+			"AMImmediateOpRn",
+			"AMImmediateOpB",
+			"AMImmediateOpA",
+			"AMRnSingleRegisterB",
+			"AMRnSingleRegisterA",
+			"AMBSingleRegisterRn",
+			"F_A",
+			"AMBARegister",
+			"A_Rn_A",
+			"A_Rn",
+			"A_B",
+			"A_A",
+			"}\n",
+			"A_None",
+			"B",
+			"AMASingleRegisterRn",
+			"AMSingleRegisterRn",
+			"AMSingleRegisterB",
+			"AA",
+			"ANone",
+			"Set",
+			"AMSingleRegisterA",
+			"AMOther",
 			"o",
 			"\"\n",
 			"sendNextChunkOfData",
@@ -1064,38 +1072,7 @@
 			"FPGAChannel::MAX_SEGMENTS",
 			"pEstablishedConnection",
 			"inUse",
-			"new",
-			"sendBufferFlag",
-			"receiveBufferMutex",
-			"receiveeventflag",
-			"receiveflag",
-			"dataLostFlag",
-			"data",
-			"dataLostFlag",
-			"netconn",
-			"voffset",
-			"DEFAULT_HOLDING_VOLTAGE",
-			"run",
-			"segmentparts",
-			"kill",
-			"load",
-			"gdb.expect(prompt)",
-			"gdb.expect",
-			"zero",
-			"bool",
-			"invalid",
-			"data_invalid",
-			"headerSize",
-			"XML",
-			"kDefaultOutputFile",
-			"xml",
-			"printfSync",
-			"printfS",
-			"cliblock",
-			"Expectation",
-			"getConnection",
-			"staticNetconnCallback",
-			"TcpConnectionTable"
+			"new"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1131,410 +1108,23 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/IntelHexReader.h",
-					"settings":
-					{
-						"buffer_size": 32,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								29,
-								29
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"auto_name": "",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E111",
-								"E201",
-								"E203",
-								"E221",
-								"E225",
-								"E231",
-								"E501",
-								"E502",
-								"E301",
-								"E302",
-								"E303",
-								"W291",
-								"W292",
-								"W293",
-								"W391"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_mark_style": "outline",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Instruction.h",
-					"settings":
-					{
-						"buffer_size": 27,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27,
-								27
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"auto_name": "class Instruction {",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E111",
-								"E201",
-								"E203",
-								"E221",
-								"E225",
-								"E231",
-								"E501",
-								"E502",
-								"E301",
-								"E302",
-								"E303",
-								"W291",
-								"W292",
-								"W293",
-								"W391"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_mark_style": "outline",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/TMS7000Decoder.h",
-					"settings":
-					{
-						"buffer_size": 30,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								30,
-								30
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"auto_name": "class TMS7000Decoder {",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E111",
-								"E201",
-								"E203",
-								"E221",
-								"E225",
-								"E231",
-								"E501",
-								"E502",
-								"E301",
-								"E302",
-								"E303",
-								"W291",
-								"W292",
-								"W293",
-								"W391"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_mark_style": "outline",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "src/intelhex/IntelHexReader.go",
 					"settings":
 					{
-						"buffer_size": 1502,
+						"buffer_size": 2725,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								536,
-								536
+								330,
+								330
 							]
 						],
 						"settings":
@@ -1600,21 +1190,7 @@
 							"pep8": true,
 							"pep8_ignore":
 							[
-								"E111",
-								"E201",
-								"E203",
-								"E221",
-								"E225",
-								"E231",
-								"E501",
-								"E502",
-								"E301",
-								"E302",
-								"E303",
-								"W291",
-								"W292",
-								"W293",
-								"W391"
+								"E501"
 							],
 							"perl_linter": "perlcritic",
 							"pyflakes_ignore":
@@ -1643,6 +1219,7 @@
 							},
 							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Go/Go.tmLanguage",
+							"tab_size": 8,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1652,19 +1229,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 1,
 					"file": "dump.go",
 					"settings":
 					{
-						"buffer_size": 376,
+						"buffer_size": 622,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								362,
-								362
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1729,21 +1306,7 @@
 							"pep8": true,
 							"pep8_ignore":
 							[
-								"E111",
-								"E201",
-								"E203",
-								"E221",
-								"E225",
-								"E231",
-								"E501",
-								"E502",
-								"E301",
-								"E302",
-								"E303",
-								"W291",
-								"W292",
-								"W293",
-								"W391"
+								"E501"
 							],
 							"perl_linter": "perlcritic",
 							"pyflakes_ignore":
@@ -1772,7 +1335,8 @@
 							},
 							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Go/Go.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1781,19 +1345,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "TMS7000-disassembler.sublime-project",
+					"buffer": 2,
+					"file": "src/tms7000/instructions.go",
 					"settings":
 					{
-						"buffer_size": 150,
+						"buffer_size": 6455,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								69,
-								69
+								1884,
+								1884
 							]
 						],
 						"settings":
@@ -1858,21 +1422,7 @@
 							"pep8": true,
 							"pep8_ignore":
 							[
-								"E111",
-								"E201",
-								"E203",
-								"E221",
-								"E225",
-								"E231",
-								"E501",
-								"E502",
-								"E301",
-								"E302",
-								"E303",
-								"W291",
-								"W292",
-								"W293",
-								"W391"
+								"E501"
 							],
 							"perl_linter": "perlcritic",
 							"pyflakes_ignore":
@@ -1900,10 +1450,134 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/Go/Go.tmLanguage",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 430.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "src/tms7000/instructions.go",
+					"settings":
+					{
+						"buffer_size": 6455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Go/Go.tmLanguage",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1305.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1928,11 +1602,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1968,6 +1649,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"in",
+				"tms7000/instructions.go"
+			],
 			[
 				"qampfp",
 				"qamp/src/QAmpFPGA.cpp"
@@ -2475,10 +2160,6 @@
 			[
 				"ire",
 				"qamp/src/IResultConnection.h"
-			],
-			[
-				"page",
-				"qamp/src/PagedCircularBuffer.h"
 			]
 		],
 		"width": 0.0

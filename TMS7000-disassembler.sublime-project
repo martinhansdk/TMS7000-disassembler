@@ -1,10 +1,27 @@
 {
-"build_systems":
-    [
-        {
-            "cmd": "go run dump.go",
-            "name": "run dump",
-            "shell": "true"
-        }
-    ]
+	"build_systems":
+	[
+		{
+			"cmd": "go run dump.go",
+			"name": "run dump",
+			"shell": "true",
+			"env" : {
+				"GOPATH" : "C:\\Users\\Hans\\Documents\\GitHub\\TMS7000-disassembler"
+			},
+			"working_dir" : "C:\\Users\\Hans\\Documents\\GitHub\\TMS7000-disassembler"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "src/tms7000"
+		},
+		{
+			"path": "src/intelhex"
+		}
+	],
+	"settings":
+    	{
+        "tab_size": 8
+    	}
 }
