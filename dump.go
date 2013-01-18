@@ -13,12 +13,15 @@ func main() {
                 log.Fatal(err)
         }
 
-        hexreader := intelhex.NewReader(file)
-        var disassembler tms7000.Disassembler
+        hexreader := intelhex.NewReader(file, 0xe000)
+        locatedBytes := intelhex.NewQueue(64353)
+        disassembler := tms7000.NewDisassembler(tms7000.TMS7000InstructionSet, locatedBytes)
 
         err = hexreader.Iterate(func(val intelhex.LocatedByte) {
-                disassembler.NextByte(val)
+                locatedBytes.Push(&val)
         })
+
+        disassembler.Do()
 
         if err != nil {
                 log.Fatal(err)

@@ -14,14 +14,16 @@ type LocatedByte struct {
 
 type IntelHexReader struct {
         rd      *bufio.Reader
+        offset  uint
         address uint
         err     error
 }
 
 // NewReader returns a new Reader
-func NewReader(rd io.Reader) *IntelHexReader {
+func NewReader(rd io.Reader, offset uint) *IntelHexReader {
         return &IntelHexReader{
-                rd: bufio.NewReader(rd),
+                rd:     bufio.NewReader(rd),
+                offset: offset,
         }
 }
 
@@ -76,7 +78,7 @@ func (self *IntelHexReader) iterateLine(line string, fun IteratorFunc) error {
 
                 switch record_type {
                 case dataRecord:
-                        self.address = uint(address)
+                        self.address = uint(address) + self.offset
                         payload, err := hex.DecodeString(hexpayload)
                         if err != nil {
                                 return err
