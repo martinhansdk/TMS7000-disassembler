@@ -4,58 +4,70 @@ import (
 	"fmt"
 )
 
+type formatFunc func([]byte, uint, *LabelTable) string
+
 type Format struct {
 	args      uint
-	argformat func([]byte, uint) string
+	argformat formatFunc
 }
 
-func noArgs(output string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
+func noArgs(output string) formatFunc {
+	return func([]byte, uint, *LabelTable) string {
 		return output
 	}
 }
 
-func oneArg(format string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
+func oneArg(format string) formatFunc {
+	return func(args []byte, pc uint, labels *LabelTable) string {
 		return fmt.Sprintf(format, args[0])
 	}
 }
 
-func twoArgs(format string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
+func twoArgs(format string) formatFunc {
+	return func(args []byte, pc uint, labels *LabelTable) string {
 		return fmt.Sprintf(format, args[0], args[1])
 	}
 }
 
-func label16bit(format string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
-		return fmt.Sprintf(format, uint16(args[0])<<8+uint16(args[1]))
+func label16bit(format string) formatFunc {
+	return func(args []byte, pc uint, labels *LabelTable) string {
+		bigval := uint16(args[0])<<8 + uint16(args[1])
+		label := labels.Get(uint(bigval))
+
+		var bigstr string
+		if label != nil {
+			bigstr = label.name
+		} else {
+			bigstr = fmt.Sprintf("%04x", bigval)
+		}
+
+		return fmt.Sprintf(format, bigstr)
 	}
 }
 
-func iop16bitOneReg(format string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
+func iop16bitOneReg(format string) formatFunc {
+	return func(args []byte, pc uint, labels *LabelTable) string {
 		bigval := uint16(args[0])<<8 + uint16(args[1])
 		return fmt.Sprintf(format, bigval, args[2])
 	}
 }
 
-func pcPlusOffset(format string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
+func pcPlusOffset(format string) formatFunc {
+	return func(args []byte, pc uint, labels *LabelTable) string {
 		address := pc + uint(args[0])
 		return fmt.Sprintf(format, address)
 	}
 }
 
-func argPcPlusOffset(format string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
+func argPcPlusOffset(format string) formatFunc {
+	return func(args []byte, pc uint, labels *LabelTable) string {
 		address := pc + uint(args[1])
 		return fmt.Sprintf(format, args[0], address)
 	}
 }
 
-func argArgPcPlusOffset(format string) func([]byte, uint) string {
-	return func(args []byte, pc uint) string {
+func argArgPcPlusOffset(format string) formatFunc {
+	return func(args []byte, pc uint, labels *LabelTable) string {
 		address := pc + uint(args[1])
 		return fmt.Sprintf(format, args[0], args[1], address)
 	}
@@ -87,8 +99,8 @@ var F_Pn_A = Format{1, oneArg("P%d,A")}
 var F_Pn_B = Format{1, oneArg("P%d,B")}
 var F_iop_Pn = Format{2, twoArgs("%%%d,P%d")}
 
-var F_iop16 = Format{2, label16bit("@>%04x")}
-var F_iop16idxB = Format{2, label16bit("@>%04x(B)")}
+var F_iop16 = Format{2, label16bit("@>%s")}
+var F_iop16idxB = Format{2, label16bit("@>%s(B)")}
 var F_iop16idxB_Rn = Format{3, iop16bitOneReg("%>%04x(B),R%d")}
 
 var F_starRn = Format{1, oneArg("*R%d")}
@@ -114,8 +126,8 @@ type Instruction struct {
 	amode   Format
 }
 
-func (self *Instruction) String(args []byte, pc uint) string {
-	return fmt.Sprintf("%s %s", self.name, self.amode.argformat(args, pc))
+func (self *Instruction) String(args []byte, pc uint, labels *LabelTable) string {
+	return fmt.Sprintf("%s %s", self.name, self.amode.argformat(args, pc, labels))
 }
 
 func (self *Instruction) Args() uint {
