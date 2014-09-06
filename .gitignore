@@ -11,3 +11,6 @@
 *.lai
 *.la
 *.a
+
+a.exe
+gtest-1.6.0/

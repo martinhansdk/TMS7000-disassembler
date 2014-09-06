@@ -226,15 +226,15 @@ var TMS7000InstructionSet = InstructionSet{
 	0xc2: {"DEC", "", F_B},
 	0xd2: {"DEC", "", F_Rn},
 
-	0xba: {"DECD", "", F_A_offst},
-	0xca: {"DECD", "", F_B_offst},
-	0xda: {"DECD", "", F_Rn_offst},
+	0xba: {"DJNZ", "", F_A_offst},
+	0xca: {"DJNZ", "", F_B_offst},
+	0xda: {"DJNZ", "", F_Rn_offst},
 
 	0x06: {"DINT", "Clear global interrupt enable bit", F_None},
 
-	0xbb: {"DJNZ", "", F_A},
-	0xcb: {"DJNZ", "", F_B},
-	0xdb: {"DJNZ", "", F_Rn},
+	0xbb: {"DECD", "", F_A},
+	0xcb: {"DECD", "", F_B},
+	0xdb: {"DECD", "", F_Rn},
 
 	0x6f: {"DSB", "", F_B_A},
 	0x1f: {"DSB", "", F_Rn_A},

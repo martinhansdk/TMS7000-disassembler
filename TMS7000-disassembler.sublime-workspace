@@ -523,7 +523,7 @@
 			"file": "src/intelhex/IntelHexReader.go",
 			"settings":
 			{
-				"buffer_size": 2725,
+				"buffer_size": 1749,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,18 +531,39 @@
 			"file": "dump.go",
 			"settings":
 			{
-				"buffer_size": 622,
+				"buffer_size": 1582,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "package tms7000\n\nimport (\n        \"fmt\"\n)\n\ntype AddressingMode struct {\n        args      uint\n        argformat func([]byte) string\n}\n\nfunc noArgs(output string) func([]byte) string {\n        return func([]byte) string {\n                return output\n        }\n}\n\nfunc oneArg(format string) func([]byte) string {\n        return func(args []byte) string {\n                return fmt.Sprintf(format, args[0])\n        }\n}\n\nfunc twoArgs(format string) func([]byte) string {\n        return func(args []byte) string {\n                return fmt.Sprintf(format, args[0], args[1])\n        }\n}\n\nfunc label16bit(format string) func([]byte) string {\n        return func(args []byte) string {\n                return fmt.Sprintf(format, uint16(args[0])<<8+uint16(args[1]))\n        }\n}\n\nfunc iop16bitOneReg(format string) func([]byte) string {\n        return func(args []byte) string {\n                bigval := uint16(args[0])<<8 + uint16(args[1])\n                return fmt.Sprintf(format, bigval, args[2])\n        }\n}\n\nvar F_None = AddressingMode{0, noArgs(\"\")}\n\nvar F_A = AddressingMode{0, noArgs(\"A\")}\nvar F_B = AddressingMode{0, noArgs(\"B\")}\nvar F_Rn = AddressingMode{1, oneArg(\"R%d\")}\nvar F_Rn_A = AddressingMode{1, oneArg(\"R%d,A\")}\nvar F_Rn_B = AddressingMode{1, oneArg(\"R%d,B\")}\nvar F_A_Rn = AddressingMode{1, oneArg(\"A,R%d\")}\nvar F_B_Rn = AddressingMode{1, oneArg(\"B,R%d\")}\n\nvar F_iop_A = AddressingMode{1, oneArg(\"%%%d,A\")}\nvar F_iop_B = AddressingMode{1, oneArg(\"%%%d,B\")}\nvar F_iop_Rn = AddressingMode{2, twoArgs(\"%%%d,R%d\")}\nvar F_iop16_Rn = AddressingMode{3, iop16bitOneReg(\"%%>%04x,R%d\")}\n\nvar F_A_B = AddressingMode{1, noArgs(\"A,B\")}\nvar F_B_A = AddressingMode{1, noArgs(\"B,A\")}\n\nvar F_Rn_Rn = AddressingMode{2, twoArgs(\"R%d,R%d\")}\nvar F_A_Pn = AddressingMode{1, oneArg(\"A,P%d\")}\nvar F_B_Pn = AddressingMode{1, oneArg(\"B,P%d\")}\nvar F_Pn_A = AddressingMode{1, oneArg(\"P%d,A\")}\nvar AMPeripheralB = AddressingMode{1, oneArg(\"P%d,B\")}\nvar AMPeripheralImmediate = AddressingMode{2, twoArgs(\"%%%d,P%d\")}\n\nvar AMDirectLabel = AddressingMode{2, label16bit(\"@>%04x\")}\nvar AMDirectLabelIndexedB = AddressingMode{2, label16bit(\"@>%04x(B)\")}\nvar AMDirectLabelIndexedBReg = AddressingMode{3, iop16bitOneReg(\"%>%04x(B),R%d\")}\n\nvar AMRegisterFileIndirect AddressingMode = AddressingMode{1, oneArg(\"*R%d\")}\n\n/*\nvar AMProgramCounterRelative AddressingMode = AddressingMode{\"PC relative\", \"%%>%s,%s,%s\"}\nvar AMDirectMemory AddressingMode = AddressingMode{\"direct memory\", \"@%s\"}\nvar AMIndexed AddressingMode = AddressingMode{\"indexed\", \"@%s(%s)\"}\n*/\n\ntype Instruction struct {\n        name    string\n        comment string\n        amode   AddressingMode\n}\n\nfunc (self *Instruction) String(args []byte) string {\n        return fmt.Sprintf(\"%s %s\", self.name, self.amode.argformat(args))\n}\n\nfunc (self *Instruction) Args() uint {\n        return self.amode.args\n}\n\ntype InstructionSet map[byte]Instruction\n\nvar TMS7000InstructionSet = InstructionSet{\n\n        0x69:   {\"ADC\", \"(A) + (B) + (C) -> (B)\", F_A_B},\n        0x19:   {\"ADC\", \"(Rs) + (A) + (C) -> (A)\", F_Rn_A},\n        0x39:   {\"ADC\", \"(Rs) + (B) + (C) -> (B)\", F_Rn_B},\n        0x49:   {\"ADC\", \"(Rs) + (Rd) + (C) -> (Rd)\", F_Rn_Rn},\n        0x29:   {\"ADC\", \"%iop + (A) + (C) -> (A)\", F_iop_A},\n        0x59:   {\"ADC\", \"%iop + (B) + (C) -> (B)\", F_iop_B},\n        0x79:   {\"ADC\", \"%iop + (Rd) + (C) -> (Rd)\", F_iop_Rn},\n\n        0x68:   {\"ADD\", \"(A) + (B) -> (B)\", F_A_B},\n        0x18:   {\"ADD\", \"(Rs) + (A) -> (A)\", F_Rn_A},\n        0x38:   {\"ADD\", \"(Rs) + (B) -> (B)\", F_Rn_B},\n        0x48:   {\"ADD\", \"(Rs) + (Rd) -> (Rd)\", F_Rn_Rn},\n        0x28:   {\"ADD\", \"%iop + (A) -> (A)\", F_iop_A},\n        0x58:   {\"ADD\", \"%iop + (B) -> (B)\", F_iop_B},\n        0x78:   {\"ADD\", \"%iop + (Rd) -> (Rd)\", F_iop_Rn},\n\n        0x63:   {\"AND\", \"(A) AND (B) -> (B)\", F_A_B},\n        0x13:   {\"AND\", \"(Rs) AND (A) -> (A)\", F_Rn_A},\n        0x33:   {\"AND\", \"(Rs) AND (B) -> (B)\", F_Rn_B},\n        0x43:   {\"AND\", \"(Rs) AND (Rd) -> (Rd)\", F_Rn_Rn},\n        0x23:   {\"AND\", \"%iop AND (A) -> (A)\", F_iop_A},\n        0x53:   {\"AND\", \"%iop AND (B) -> (B)\", F_iop_B},\n        0x73:   {\"AND\", \"%iop AND (Rd) -> (Rd)\", F_iop_Rn},\n\n        0x83:   {\"ANDP\", \"(A) AND (Pn) -> (Pn)\", F_A_Pn},\n        0x93:   {\"ANDP\", \"(B) AND (Pn) -> (Pn)\", F_B_Pn},\n        0xA3:   {\"ANDP\", \"%iop AND (Pn) -> (Pn)\", AMPeripheralImmediate},\n\n        0x8c:   {\"BR\", \"@LABEL -> PC\", AMDirectLabel},\n        0xac:   {\"BR\", \"@LABEL(B) -> PC\", AMDirectLabelIndexedB},\n        0x9c:   {\"BR\", \"*Rn -> PC\", AMRegisterFileIndirect},\n\n        0x8e:   {\"CALL\", \"PUSH PC, @LABEL -> PC\", AMDirectLabel},\n        0xae:   {\"CALL\", \"PUSH PC, @LABEL(B) -> PC\", AMDirectLabelIndexedB},\n        0x9e:   {\"CALL\", \"PUSH PC, *Rn -> PC\", AMRegisterFileIndirect},\n\n        0xb5:   {\"CLR\", \"0 -> (A)\", F_A},\n        0xc6:   {\"CLR\", \"0 -> (B)\", F_B},\n        0xd5:   {\"CLR\", \"0 -> (Rd)\", F_Rn},\n\n        0xb2:   {\"DEC\", \"\", F_A},\n        0xc2:   {\"DEC\", \"\", F_B},\n        0xd2:   {\"DEC\", \"\", F_Rn},\n\n        0x06:   {\"DINT\", \"Clear global interrupt enable bit\", F_None},\n\n        0x05:   {\"EINT\", \"Set global interrupt enable bit\", F_None},\n\n        0xb3:   {\"INC\", \"\", F_A},\n        0xc3:   {\"INC\", \"\", F_B},\n        0xd3:   {\"INC\", \"\", F_Rn},\n\n        0x0d:   {\"LDSP\", \"(B) -> (SP) Load SP with register B's contents\", F_None},\n\n        0x00:   {\"NOP\", \"\", F_None},\n\n        0xc0:   {\"MOV\", \"\", F_A_B},\n        0xd0:   {\"MOV\", \"\", F_Rn_A},\n        0x62:   {\"MOV\", \"\", F_B_A},\n        0xd1:   {\"MOV\", \"\", F_Rn_B},\n        0x12:   {\"MOV\", \"\", F_A_Rn},\n        0x32:   {\"MOV\", \"\", F_B_Rn},\n        0x42:   {\"MOV\", \"\", F_Rn_Rn},\n        0x22:   {\"MOV\", \"\", F_iop_A},\n        0x52:   {\"MOV\", \"\", F_iop_B},\n        0x72:   {\"MOV\", \"\", F_iop_Rn},\n\n        0x88:   {\"MOVD\", \"\", F_iop16_Rn},\n        0xa8:   {\"MOVD\", \"\", AMDirectLabelIndexedBReg},\n        0x98:   {\"MOVD\", \"\", F_Rn_Rn},\n\n        0x82:   {\"MOVP\", \"\", F_A_Pn},\n        0x92:   {\"MOVP\", \"\", F_B_Pn},\n        0xA2:   {\"MOVP\", \"\", AMPeripheralImmediate},\n        0x80:   {\"MOVP\", \"\", F_Pn_A},\n        0x91:   {\"MOVP\", \"\", AMPeripheralB},\n\n        0x0b:   {\"RETI\", \"return from interrupt\", F_None},\n\n        0x0a:   {\"RETS\", \"return from subroutine\", F_None},\n\n        0x8b:   {\"STA\", \"(A) -> @LABEL\", AMDirectLabel},\n        0xab:   {\"STA\", \"(A) -> @LABEL(B)\", AMDirectLabelIndexedB},\n        0x9b:   {\"STA\", \"(A) -> *Rn\", AMRegisterFileIndirect},\n\n        0x09:   {\"STSP\", \"(SP) -> (B) Copy the SP into Register B\", F_None},\n}\n",
 			"file": "src/tms7000/instructions.go",
-			"file_size": 6737,
-			"file_write_time": 130030118375504129,
 			"settings":
 			{
-				"buffer_size": 6455,
+				"buffer_size": 10804,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "output.txt",
+			"settings":
+			{
+				"buffer_size": 227713,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "OP6F000.IHX",
+			"settings":
+			{
+				"buffer_size": 11277,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "OP6E000.IHX",
+			"settings":
+			{
+				"buffer_size": 22541,
 				"line_ending": "Windows"
 			}
 		}
@@ -1108,7 +1129,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1116,15 +1137,15 @@
 					"file": "src/intelhex/IntelHexReader.go",
 					"settings":
 					{
-						"buffer_size": 2725,
+						"buffer_size": 1749,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								330,
-								330
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1220,7 +1241,7 @@
 							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Go/Go.tmLanguage",
 							"tab_size": 8,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 63.0,
@@ -1233,7 +1254,7 @@
 					"file": "dump.go",
 					"settings":
 					{
-						"buffer_size": 622,
+						"buffer_size": 1582,
 						"regions":
 						{
 						},
@@ -1336,7 +1357,7 @@
 							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Go/Go.tmLanguage",
 							"tab_size": 8,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1349,15 +1370,15 @@
 					"file": "src/tms7000/instructions.go",
 					"settings":
 					{
-						"buffer_size": 6455,
+						"buffer_size": 10804,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1884,
-								1884
+								925,
+								925
 							]
 						],
 						"settings":
@@ -1459,11 +1480,37 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "output.txt",
+					"settings":
+					{
+						"buffer_size": 227713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1046,
+								1046
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1471,15 +1518,15 @@
 					"file": "src/tms7000/instructions.go",
 					"settings":
 					{
-						"buffer_size": 6455,
+						"buffer_size": 10804,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2617,
+								2617
 							]
 						],
 						"settings":
@@ -1578,6 +1625,58 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 1305.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "OP6F000.IHX",
+					"settings":
+					{
+						"buffer_size": 11277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10596,
+								10596
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3375.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "OP6E000.IHX",
+					"settings":
+					{
+						"buffer_size": 22541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 7236.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
